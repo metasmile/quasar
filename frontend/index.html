@@ -40,6 +40,35 @@
         <button type="submit">Click Me!</button>
       </form>
       <section id="greeting"></section>
+
+      <form id="bitcoin-form">
+        <label for="date">Date (YYYY-MM-DD): &nbsp;</label>
+        <input id="date" alt="Date" type="text" />
+        <button type="submit">Check Bitcoin Supply</button>
+      </form>
+      <section id="bitcoin-result"></section>
     </main>
+    <script type="module">
+      import { backend } from 'declarations/backend';
+
+      // ResearchBitcoin API call form event
+      document.getElementById('bitcoin-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const date = document.getElementById('date').value;
+      const resultElem = document.getElementById('bitcoin-result');
+      resultElem.innerText = 'Loading...';
+      try {
+        const result = await backend.fetch_supply_data(date);
+        if ('ok' in result) {
+        const { date, supply, percentage } = result.ok;
+        resultElem.innerText = `Date: ${date}\nSupply: ${supply}\nPercentage: ${percentage}`;
+        } else {
+        resultElem.innerText = `Error: ${result.err}`;
+        }
+      } catch (err) {
+        resultElem.innerText = `API call failed: ${err}`;
+      }
+      });
+    </script>
   </body>
 </html>

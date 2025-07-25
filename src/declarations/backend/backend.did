@@ -19,6 +19,7 @@ service : {
   fetch_supply_data : (text) -> (Result);
   get_api_key : () -> (text) query;
   get_last_response : () -> (text) query;
+  greet : (text) -> (text) query;
   set_api_key : (text) -> ();
   transform_response : (TransformContext, HttpResponse) -> (HttpResponse) query;
 }

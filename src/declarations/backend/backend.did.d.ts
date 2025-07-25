@@ -27,6 +27,7 @@ export interface _SERVICE {
   'fetch_supply_data' : ActorMethod<[string], Result>,
   'get_api_key' : ActorMethod<[], string>,
   'get_last_response' : ActorMethod<[], string>,
+  'greet' : ActorMethod<[string], string>,
   'set_api_key' : ActorMethod<[string], undefined>,
   'transform_response' : ActorMethod<
     [TransformContext, HttpResponse],

@@ -112,5 +112,11 @@ fn get_last_response() -> String {
     LAST_RESPONSE.with(|cell| cell.borrow().get().to_string())
 }
 
+// 인사말 함수
+#[ic_cdk::query]
+fn greet(name: String) -> String {
+    format!("Hello, {}!", name)
+}
+
 // Candid 인터페이스 정의
 ic_cdk::export_candid!();

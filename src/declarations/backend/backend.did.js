@@ -23,6 +23,7 @@ export const idlFactory = ({ IDL }) => {
     'fetch_supply_data' : IDL.Func([IDL.Text], [Result], []),
     'get_api_key' : IDL.Func([], [IDL.Text], ['query']),
     'get_last_response' : IDL.Func([], [IDL.Text], ['query']),
+    'greet' : IDL.Func([IDL.Text], [IDL.Text], ['query']),
     'set_api_key' : IDL.Func([IDL.Text], [], []),
     'transform_response' : IDL.Func(
         [TransformContext, HttpResponse],

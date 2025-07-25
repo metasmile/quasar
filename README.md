@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/metasmile/quasar/refs/heads/main/quasar_logo.png)
+
 
 # 🌌 QUASAR — On-Chain Reality Engine
 

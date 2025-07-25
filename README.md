@@ -8,13 +8,13 @@ We transform raw on-chain data into structured matrices, extract temporal vector
 
 ---
 
-## 🪐 1. Vision
+## 🪐 Vision
 
 > To build the first **general-purpose on-chain cognition system** — capable of perceiving, modeling, and projecting the collective motion of the crypto universe.
 
 ---
 
-## 🧠 2. Philosophy
+## 🧠 Philosophy
 
 - The blockchain is not just data — it is **state evolution.**  
 - True intelligence comes from **structure + motion.**  
@@ -24,7 +24,7 @@ We are building the **"world model"** of crypto — continuously updating, self-
 
 ---
 
-## 💡 3. What Makes QUASAR Different
+## 💡 What Makes QUASAR Different
 
 | Feature | Description |
 |--------|-------------|
@@ -35,7 +35,7 @@ We are building the **"world model"** of crypto — continuously updating, self-
 
 ---
 
-## 🛠️ 4. Architecture Overview
+## 🛠️ Architecture Overview
 
 ```
 +-----------------------------+
@@ -67,16 +67,7 @@ We are building the **"world model"** of crypto — continuously updating, self-
 
 ---
 
-## 🔬 5. Key Modules
-
-- `matrix_core`: transforms raw blockchain state into structured tensors  
-- `vector_flow`: computes derivatives and directional change  
-- `quasar_ai`: interprets vectors using LLMs and custom reasoning agents  
-- `dashboard`: interactive time-travel through market behavior
-
----
-
-## 🔮 6. Use Cases
+## 🔮 Use Cases
 
 - 📡 Forecast collective liquidity shifts across DeFi ecosystems  
 - 🔍 Detect anomalous directional vectors (e.g. risk inflow to bridge protocols)  
@@ -85,28 +76,7 @@ We are building the **"world model"** of crypto — continuously updating, self-
 
 ---
 
-## 🧪 7. Current Status
-
-| Module            | Status       |
-|-------------------|--------------|
-| Tensor Generator  | ✅ Prototype  |
-| Vector Engine     | ✅ Prototype  |
-| LLM Bridge        | ⏳ In progress |
-| Visualization UI  | ⏳ In progress |
-| Multi-chain Parser| 🚧 Planned   |
-
----
-
-## 💻 8. Built With
-
-- 🦀 Rust (ICP Canisters)  
-- 🧠 AI Reasoning Layer (OpenAI or local LLMs)  
-- ⛓️ On-chain parsers & storage matrix  
-- 📈 Svelte or React for future UI  
-
----
-
-## 🛡️ 9. Why Internet Computer
+## 🛡️ Why Internet Computer
 
 - On-chain compute and data storage = zero off-chain infra  
 - Smart scheduling for time-evolving vector states  
@@ -115,7 +85,7 @@ We are building the **"world model"** of crypto — continuously updating, self-
 
 ---
 
-## 🧠 10. Join the Mission
+## 🧠 Join the Mission
 
 > QUASAR is not just a tool — it is an attempt to give form and direction to the decentralized mind.  
 We are building a **cognitive layer** on top of the blockchain.

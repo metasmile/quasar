@@ -1,7 +1,7 @@
 ![](https://raw.githubusercontent.com/metasmile/quasar/refs/heads/main/quasar_logo.png)
 
 
-# 🌌 QUASAR — On-Chain Reality Engine
+# 🌌 QUASAR — Onchain Crystal Ball for Your Investment Decisions
 
 > **Not just an analytics tool — a vector intelligence system for the crypto economy.**  
 We transform raw on-chain data into structured matrices, extract temporal vectors, and forecast the emergent behavior of decentralized markets.

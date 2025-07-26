@@ -11,14 +11,6 @@ export const idlFactory = ({ IDL }) => {
     'body' : IDL.Vec(IDL.Nat8),
     'headers' : IDL.Vec(HttpHeader),
   });
-  const TransformArgs = IDL.Record({
-    'context' : IDL.Vec(IDL.Nat8),
-    'response' : HttpResponse,
-  });
-  const TransformContext = IDL.Record({
-    'function' : IDL.Func([TransformArgs], [HttpResponse], ['query']),
-    'context' : IDL.Vec(IDL.Nat8),
-  });
   return IDL.Service({
     'fetch_supply_data' : IDL.Func([IDL.Text], [Result], []),
     'get_api_key' : IDL.Func([], [IDL.Text], ['query']),
@@ -26,7 +18,7 @@ export const idlFactory = ({ IDL }) => {
     'greet' : IDL.Func([IDL.Text], [IDL.Text], ['query']),
     'set_api_key' : IDL.Func([IDL.Text], [], []),
     'transform_response' : IDL.Func(
-        [TransformContext, HttpResponse],
+        [IDL.Tuple(IDL.Vec(IDL.Nat8), HttpResponse)],
         [HttpResponse],
         ['query'],
       ),

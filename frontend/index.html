@@ -59,12 +59,7 @@
       resultElem.innerText = 'Loading...';
       try {
         const result = await backend.fetch_supply_data(date);
-        if ('ok' in result) {
-        const { date, supply, percentage } = result.ok;
-        resultElem.innerText = `Date: ${date}\nSupply: ${supply}\nPercentage: ${percentage}`;
-        } else {
-        resultElem.innerText = `Error: ${result.err}`;
-        }
+        resultElem.innerText = SON.stringify(result, null, 2);
       } catch (err) {
         resultElem.innerText = `API call failed: ${err}`;
       }

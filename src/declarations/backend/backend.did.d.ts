@@ -15,14 +15,6 @@ export interface SupplyDistribution {
   'supply' : number,
   'percentage' : number,
 }
-export interface TransformArgs {
-  'context' : Uint8Array | number[],
-  'response' : HttpResponse,
-}
-export interface TransformContext {
-  'function' : [Principal, string],
-  'context' : Uint8Array | number[],
-}
 export interface _SERVICE {
   'fetch_supply_data' : ActorMethod<[string], Result>,
   'get_api_key' : ActorMethod<[], string>,
@@ -30,7 +22,7 @@ export interface _SERVICE {
   'greet' : ActorMethod<[string], string>,
   'set_api_key' : ActorMethod<[string], undefined>,
   'transform_response' : ActorMethod<
-    [TransformContext, HttpResponse],
+    [[Uint8Array | number[], HttpResponse]],
     HttpResponse
   >,
 }

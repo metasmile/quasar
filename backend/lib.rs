@@ -1,4 +1,6 @@
 use candid::{CandidType, Deserialize};
+use ic_cdk::api::management_canister::http_request::TransformFunc;
+
 use ic_cdk::api::management_canister::http_request::{
     http_request, CanisterHttpRequestArgument, HttpHeader, HttpResponse, HttpMethod, TransformContext,
 };
@@ -57,7 +59,9 @@ fn get_api_key() -> String {
 
 // HTTP 응답 변환 함수
 #[ic_cdk::query]
-fn transform_response(_context: TransformContext, response: HttpResponse) -> HttpResponse {
+fn transform_response(raw: (Vec<u8>, HttpResponse)) -> HttpResponse {
+    // Destructure the tuple to get the response
+    let (_context, response) = raw;
     response
 }
 
@@ -70,24 +74,24 @@ async fn fetch_supply_data(date: String) -> Result<SupplyDistribution, String> {
     }
 
     let request = CanisterHttpRequestArgument {
-        url: format!(
-            "https://api.researchbitcoin.net/v1/supply_distribution/supply_coinbase?token={}&date_field={}&output_format=json",
-            api_key, date
-        ),
-        method: HttpMethod::GET, // <-- 여기만 수정
+        url: format!("https://api..."),
+        method: HttpMethod::GET,
         headers: vec![HttpHeader {
             name: "Accept".to_string(),
             value: "application/json".to_string(),
         }],
         max_response_bytes: None,
         body: None,
-        transform: Some(TransformContext::from_name(
-            "transform_response".to_string(),
-            vec![]
-        )),
+        transform: Some(TransformContext {
+            function: TransformFunc::new(
+                ic_cdk::api::id(),
+                "transform_response".to_string(),
+            ),
+            context: vec![], // Empty context since we're not using it
+        }),
     };
-
-    match http_request(request, 10_000_000).await {
+    
+    match http_request(request, 30_000_000_000).await {
         Ok((response,)) => {
             let response_str = String::from_utf8(response.body)
                 .map_err(|e| format!("Failed to parse response: {}", e))?;

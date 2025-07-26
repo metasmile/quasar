@@ -10,16 +10,11 @@ type SupplyDistribution = record {
   supply : float64;
   percentage : float64;
 };
-type TransformArgs = record { context : blob; response : HttpResponse };
-type TransformContext = record {
-  function : func (TransformArgs) -> (HttpResponse) query;
-  context : blob;
-};
 service : {
   fetch_supply_data : (text) -> (Result);
   get_api_key : () -> (text) query;
   get_last_response : () -> (text) query;
   greet : (text) -> (text) query;
   set_api_key : (text) -> ();
-  transform_response : (TransformContext, HttpResponse) -> (HttpResponse) query;
+  transform_response : (record { blob; HttpResponse }) -> (HttpResponse) query;
 }
